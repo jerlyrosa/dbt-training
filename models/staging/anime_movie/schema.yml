@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: anime_sample_data
+  - name: data_movie_anime
     description: "A starter dbt model"
     columns:
       - name: id

@@ -14,8 +14,9 @@ SELECT *
         rating,
         members
     FROM  {{ ref('anime_sample_data') }}  as Animes
-    )
-)
+    ))
 
+
+    
 SELECT *
 FROM data_anime
