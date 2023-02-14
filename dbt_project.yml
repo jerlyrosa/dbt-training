@@ -33,6 +33,27 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   training:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+      example:
+          schema: example 
+      staging:
+          schema: staging
+          materialized: view
+      marts:
+          schema: marts
+          materialized: table
+
+
+
+
+seeds:
+  training:
+    +enabled: true
+    +schema: seed_data
+    # # This configures seeds/country_codes.csv
+    # country_codes:
+    #   # Override column types
+    #   +column_types:
+    #     country_code: varchar(2)
+    #     country_name: varchar(32)
+    # marketing:
+    #   +schema: marketing # this will take precedence
